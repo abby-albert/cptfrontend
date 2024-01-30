@@ -77,7 +77,7 @@ div id="login">
            uid: uid,
            password: password
        };
-       fetch('https://raw.githubusercontent.com/abby-albert/elementmergegame/master/game.md', { //use your own port
+       fetch('http://localhost:8086/api/users/create', { //use your own port
            method: 'POST',
            headers: {
                'Content-Type': 'application/json',
