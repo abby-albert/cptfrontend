@@ -40,26 +40,27 @@
     <script src="js/main.js"></script>
     <script>
         function login() {
-            // Get the values entered by the user
-            const email = document.getElementById('signInEmailInput').value;
-            const password = document.getElementById('signInPasswordInput').value;
+    const email = document.getElementById('signInEmailInput').value;
+    const password = document.getElementById('signInPasswordInput').value;
 
-            // Mock server response (replace this with actual server communication)
-            const mockServerResponse = {
-                success: true,
-                redirectUrl: "/Users/abigailalbert/cpt/elementmergegame/posts/game.html"
-            };
+    // Assume a successful server response
+    const mockServerResponse = {
+        success: true,
+        redirectUrl: "/Users/abigailalbert/cpt/elementmergegame/posts/game.html",
+        token: "your_authentication_token"
+    };
 
-            // Check if login is successful
-            if (mockServerResponse.success) {
-                // Redirect the user to the specified URL
-                window.location.href = mockServerResponse.redirectUrl;
-            } else {
-                // Display an error message to the user (replace this with your own error handling)
-                alert('Login failed. Please check your credentials.');
-            }
-        }
+    if (mockServerResponse.success) {
+        window.location.href = mockServerResponse.redirectUrl;
+
+        // You can use the authentication token in subsequent requests for authentication
+        const authToken = mockServerResponse.token;
+
+        // Perform additional actions, if needed
+    } else {
+        alert('Login failed. Please check your credentials.');
+    }
+}
     </script>
 </body>
 </html>
-
