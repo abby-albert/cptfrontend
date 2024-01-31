@@ -7,36 +7,41 @@
     <title>Login/Signup</title>
 </head>
 <body>
-    <div class="container">
-        <div id="login">
-            <h2>Login</h2>
+    <div class="CONTAINER">
+        <!-- This is the card that holds the login fields and button -->
+        <div class="CARD">
+            <h3>Login</h3> <!-- The title of the form -->
+    
+            <!-- Inside the login form -->
             <form id="login-form">
-                <label for="login-username">Username:</label>
-                <input type="text" id="login-username" required>
-
-                <label for="login-password">Password:</label>
-                <input type="password" id="login-password" required>
-
-                <button type="submit">Log in</button>
-            </form>
-        </div>
-
-        <div id="signup">
-            <h2>Sign Up</h2>
-            <form id="signup-form">
-                <label for="signup-name">Name:</label>
-                <input type="text" id="signup-name" required>
-
-                <label for="signup-username">Username:</label>
-                <input type="text" id="signup-username" required>
-
-                <label for="signup-password">Password:</label>
-                <input type="password" id="signup-password" required>
-
-                <button type="submit">Sign Up</button>
+                <!-- The input field for the email, with a placeholder for user guidance -->
+                <input id="signInEmailInput" class="input" placeholder="Email">
+                <!-- The input field for the password -->
+                <input id="signInPasswordInput" class="input" placeholder="Password">
+                <!-- Add the hidden input field for redirect URL -->
+                <input type="hidden" id="redirect-url" value="/Users/abigailalbert/cpt/elementmergegame/posts/game.html">
+                <!-- The login button with an onclick attribute that calls the login_user() function -->
+                <button class="signInButton" onclick="login_user()">Login</button>
             </form>
         </div>
     </div>
+    <div id="signup">
+        <h2>Sign Up</h2>
+        <!-- Inside the signup form -->
+        <form id="signup-form">
+            <label for="signup-name">Name:</label>
+            <input type="text" id="signup-name" required>
+            <label for="signup-username">Username:</label>
+            <input type="text" id="signup-username" required>
+            <label for="signup-password">Password:</label>
+            <input type="password" id="signup-password" required>
+            <!-- Add the hidden input field for redirect URL -->
+            <input type="hidden" id="redirect-url" value="/Users/abigailalbert/cpt/elementmergegame/posts/game.html">
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+    </div>
+    
 
     <script src="js/main.js"></script>
 </body>

@@ -1,58 +1,48 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>2048 Cupcakes | elementmergegame</title>
-<meta name="generator" content="Jekyll v3.9.3" />
-<meta property="og:title" content="2048 Cupcakes" />
-<meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4100/" />
-<meta property="og:url" content="http://localhost:4100/" />
-<meta property="og:site_name" content="elementmergegame" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="2048 Cupcakes" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","headline":"2048 Cupcakes","name":"elementmergegame","url":"http://localhost:4100/"}</script>
-<!-- End Jekyll SEO tag -->
-
-    <link rel="stylesheet" href="/assets/css/style.css?v=ec578c19e9b9ad79c07f3c11ba326d6b04e2d9db">
-    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
-
-<!-- Setup Google Analytics -->
-
-
-
-<!-- You can set your favicon here -->
-<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
-
-<!-- end custom head snippets -->
-
-  </head>
-  <body>
-    <div class="container-lg px-3 my-5 markdown-body">
-      
-      <h1><a href="http://localhost:4100/">elementmergegame</a></h1>
-      
-
-      <h1 id="2048-cupcakes">2048 Cupcakes</h1>
-<p><a href="https://henry7720.github.io/2048-cupcakes/">2048 Cupcakes</a> is a <a href="https://github.com/gabrielecirulli/2048/">2048</a>-based game that uses almost exactly the same code, yet, uses cupcake images in place of the numbers.
-I figured that if I showed this to people, they might be able to easily make their own clones!</p>
-
-<p><strong>Here’s a hint (for making your own):</strong> go to <code class="language-plaintext highlighter-rouge">style/main.css</code> at line <a href="/style/main.css#L436"><code class="language-plaintext highlighter-rouge">436</code></a>: notice how there’s a <code class="language-plaintext highlighter-rouge">background</code> property? Enjoy!</p>
-
-
-      
-      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
-        This site is open source. <a href="https://github.com/abby-albert/elementmergegame/edit/gh-pages/README.md">Improve this page</a>.
-      </div>
-      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/main.css">
+    <title>Login/Signup</title>
+</head>
+<body>
+    <div class="CONTAINER">
+        <!-- This is the card that holds the login fields and button -->
+        <div class="CARD">
+            <h3>Login</h3> <!-- The title of the form -->
+    
+            <!-- Inside the login form -->
+            <form id="login-form">
+                <!-- The input field for the email, with a placeholder for user guidance -->
+                <input id="signInEmailInput" class="input" placeholder="Email">
+                <!-- The input field for the password -->
+                <input id="signInPasswordInput" class="input" placeholder="Password">
+                <!-- Add the hidden input field for redirect URL -->
+                <input type="hidden" id="redirect-url" value="/Users/abigailalbert/cpt/elementmergegame/posts/game.html">
+                <!-- The login button with an onclick attribute that calls the login_user() function -->
+                <button class="signInButton" onclick="login_user()">Login</button>
+            </form>
+        </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
-  </body>
+    <div id="signup">
+        <h2>Sign Up</h2>
+        <!-- Inside the signup form -->
+        <form id="signup-form">
+            <label for="signup-name">Name:</label>
+            <input type="text" id="signup-name" required>
+            <label for="signup-username">Username:</label>
+            <input type="text" id="signup-username" required>
+            <label for="signup-password">Password:</label>
+            <input type="password" id="signup-password" required>
+            <!-- Add the hidden input field for redirect URL -->
+            <input type="hidden" id="redirect-url" value="/Users/abigailalbert/cpt/elementmergegame/posts/game.html">
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+    </div>
+    
+
+    <script src="js/main.js"></script>
+</body>
 </html>
