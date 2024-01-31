@@ -14,8 +14,8 @@
     
             <!-- Inside the login form -->
             <form id="login-form">
-                <!-- The input field for the email, with a placeholder for user guidance -->
-                <input id="signInEmailInput" class="input" placeholder="Email">
+                <!-- The input field for the username, with a placeholder for user guidance -->
+                <input id="signInUsernameInput" class="input" placeholder="Username">
                 <!-- The input field for the password -->
                 <input id="signInPasswordInput" class="input" placeholder="Password">
                 <!-- The login button with an onclick attribute that calls the login function -->
@@ -36,6 +36,35 @@
             <button type="submit">Sign Up</button>
         </form>
     </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        function login() {
+            const username = document.getElementById('signInUsernameInput').value;
+            const password = document.getElementById('signInPasswordInput').value;
+
+            // Assume a successful server response
+            const mockServerResponse = {
+                success: true,
+                redirectUrl: "/Users/abigailalbert/cpt/elementmergegame/game.html",
+                token: "your_authentication_token"
+            };
+
+            if (mockServerResponse.success) {
+                window.location.href = mockServerResponse.redirectUrl;
+
+                // You can use the authentication token in subsequent requests for authentication
+                const authToken = mockServerResponse.token;
+
+                // Perform additional actions, if needed
+            } else {
+                alert('Login failed. Please check your credentials.');
+            }
+        }
+    </script>
+</body>
+</html>
+
 
     <script src="js/main.js"></script>
     <script>
