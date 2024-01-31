@@ -18,10 +18,8 @@
                 <input id="signInEmailInput" class="input" placeholder="Email">
                 <!-- The input field for the password -->
                 <input id="signInPasswordInput" class="input" placeholder="Password">
-                <!-- Add the hidden input field for redirect URL -->
-                <input type="hidden" id="redirect-url" value="/Users/abigailalbert/cpt/elementmergegame/posts/game.html">
-                <!-- The login button with an onclick attribute that calls the login_user() function -->
-                <button class="signInButton" onclick="login_user()">Login</button>
+                <!-- The login button with an onclick attribute that calls the login function -->
+                <button class="signInButton" onclick="login()">Login</button>
             </form>
         </div>
     </div>
@@ -35,14 +33,33 @@
             <input type="text" id="signup-username" required>
             <label for="signup-password">Password:</label>
             <input type="password" id="signup-password" required>
-            <!-- Add the hidden input field for redirect URL -->
-            <input type="hidden" id="redirect-url" value="/Users/abigailalbert/cpt/elementmergegame/posts/game.html">
             <button type="submit">Sign Up</button>
         </form>
     </div>
-    </div>
-    
 
     <script src="js/main.js"></script>
+    <script>
+        function login() {
+            // Get the values entered by the user
+            const email = document.getElementById('signInEmailInput').value;
+            const password = document.getElementById('signInPasswordInput').value;
+
+            // Mock server response (replace this with actual server communication)
+            const mockServerResponse = {
+                success: true,
+                redirectUrl: "/Users/abigailalbert/cpt/elementmergegame/posts/game.html"
+            };
+
+            // Check if login is successful
+            if (mockServerResponse.success) {
+                // Redirect the user to the specified URL
+                window.location.href = mockServerResponse.redirectUrl;
+            } else {
+                // Display an error message to the user (replace this with your own error handling)
+                alert('Login failed. Please check your credentials.');
+            }
+        }
+    </script>
 </body>
 </html>
+
