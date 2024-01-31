@@ -1,95 +1,43 @@
-div id="login">
-    <p><label>
-        User ID:
-        <input type="text" name="uid" id="uid" required>
-    </label></p>
-    <p><label>
-        Password:
-        <input type="password" name="password" id="password" required>
-    </label></p>
-    <p>
-        <button class="button" type="submit">Log in</button>
-    </p>
-</div>
-<script>
-    document.getElementById('login').addEventListener('submit', function(event) {
-             event.preventDefault(); 
-             const uid = document.getElementById('uid').value;
-             const password = document.getElementById('password').value;
-             const loginData = {
-                 uid: uid,
-                 password: password
-             };
-             fetch('https://raw.githubusercontent.com/abby-albert/elementmergegame/master/game.md', { // use your own port please
-                 method: 'POST',
-                 headers: {
-                     'Content-Type': 'application/json'
-                 },
-                 body: JSON.stringify(loginData)
-             })
-             .then(response => {
-                 if (response.ok) {
-                     return response.json();
-                 } else {
-                     if (response.status === 401) {
-                         throw new Error('Wrong username or password. Please retype.');
-                     } else if (response.status === 404) {
-                         throw new Error('Username or password not found. Please register first.');
-                     } else {
-                         throw new Error('Login failed');
-                     }
-                 }
-             })
-             .then(data => {
-                 console.log('it worked!');
-             })
-             .catch(error => {
-                 console.error('Error:', error.message);
-                 alert(error.message);
-             });
-         });
-     </script>
-<div id="signup">
-  <p><label>
-      Name:
-      <input type="text" name="name" id="name" required>
-  </label></p>
-  <p><label>
-      User ID:
-      <input type="text" name="uid" id="uid" required>
-  </label></p>
-  <p><label>
-      Password:
-      <input type="password" name="password" id="password" required>
-  </label></p>
-  <p>
-      <button class="button" type="submit" onclick="signup()" >Sign Up</button>
-  </p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/main.css">
+    <title>Login/Signup</title>
+</head>
+<body>
+    <div class="container">
+        <div id="login">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" required>
 
-<script>
-  function signup() {
-       var name = document.getElementById('name').value;
-       var uid = document.getElementById('uid').value;
-       var password = document.getElementById('password').value;
-       var requestBody = {
-           name: name,
-           uid: uid,
-           password: password
-       };
-       fetch('http://localhost:8086/api/users/create', { //use your own port
-           method: 'POST',
-           headers: {
-               'Content-Type': 'application/json',
-           },
-           body: JSON.stringify(requestBody),
-       })
-       .then(response => response.json())
-       .then(data => {
-           console.log('Sign Up successful:', data);
-           window.location.href = "{{site.baseurl}}/login";
-       })
-       .catch(error => {
-           console.error('Error:', error);
-       });
-   }
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" required>
+
+                <button type="submit">Log in</button>
+            </form>
+        </div>
+
+        <div id="signup">
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <label for="signup-name">Name:</label>
+                <input type="text" id="signup-name" required>
+
+                <label for="signup-username">Username:</label>
+                <input type="text" id="signup-username" required>
+
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" required>
+
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
