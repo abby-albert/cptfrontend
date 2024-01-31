@@ -20,9 +20,6 @@
                 <input id="signInPasswordInput" class="input" placeholder="Password">
                 <!-- The login button with an onclick attribute that calls the login function -->
                 <button class="signInButton" onclick="login()">Login</button>
-                <!-- Inside the login form -->
-                <input type="hidden" id="redirect-url" value="/Users/abigailalbert/cpt/elementmergegame/game.html">
-
             </form>
         </div>
     </div>
@@ -43,27 +40,54 @@
     <script src="js/main.js"></script>
     <script>
         function login() {
-    const email = document.getElementById('signInEmailInput').value;
-    const password = document.getElementById('signInPasswordInput').value;
+            const email = document.getElementById('signInEmailInput').value;
+            const password = document.getElementById('signInPasswordInput').value;
 
-    // Assume a successful server response
-    const mockServerResponse = {
-        success: true,
-        redirectUrl: "/Users/abigailalbert/cpt/elementmergegame/game.html",
-        token: "your_authentication_token"
-    };
+            // Assume a successful server response
+            const mockServerResponse = {
+                success: true,
+                redirectUrl: "/Users/abigailalbert/cpt/elementmergegame/game.html",
+                token: "your_authentication_token"
+            };
 
-    if (mockServerResponse.success) {
-        window.location.href = mockServerResponse.redirectUrl;
+            if (mockServerResponse.success) {
+                window.location.href = mockServerResponse.redirectUrl;
 
-        // You can use the authentication token in subsequent requests for authentication
-        const authToken = mockServerResponse.token;
+                // You can use the authentication token in subsequent requests for authentication
+                const authToken = mockServerResponse.token;
 
-        // Perform additional actions, if needed
-    } else {
-        alert('Login failed. Please check your credentials.');
-    }
-}
+                // Perform additional actions, if needed
+            } else {
+                alert('Login failed. Please check your credentials.');
+            }
+        }
+    </script>
+</body>
+</html>
+    <script>
+        function signup() {
+            const name = document.getElementById('signup-name').value;
+            const username = document.getElementById('signup-username').value;
+            const password = document.getElementById('signup-password').value;
+    
+            // Assume a successful server response
+            const mockServerResponse = {
+                success: true,
+                redirectUrl: "{{site.baseurl}}/login", // Redirect to the login page
+                token: "your_authentication_token"
+            };
+    
+            if (mockServerResponse.success) {
+                window.location.href = mockServerResponse.redirectUrl;
+    
+                // You can use the authentication token in subsequent requests for authentication
+                const authToken = mockServerResponse.token;
+    
+                // Perform additional actions, if needed
+            } else {
+                alert('Sign Up failed. Please try again.');
+            }
+        }
     </script>
 </body>
 </html>
