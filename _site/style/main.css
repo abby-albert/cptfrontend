@@ -491,7 +491,6 @@ hr {
 .tile.tile-2048 .tile-inner {
     font-size: 0px;
     background-image: url('/Users/abigailalbert/cpt/elementmergegame/_site/img/sodium-block.png');
-    /* use ../img/pumpkin-cupcake.jpg for fall */
     background-size: cover;
 }
 
