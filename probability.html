@@ -1,0 +1,38 @@
+import pandas as pd
+import numpy as np
+from sklearn.preprocessing import OneHotEncoder
+
+# Assuming you have a logistic regression model named 'logreg' and an encoder named 'enc'
+
+# Define a new student
+student = pd.DataFrame({
+    'name': ['abby albert'],
+    'study_hours': [5],  # Number of study hours per day
+    'attendance': [90],  # Percentage of attendance
+    'assignments_completed': [10],  # Number of assignments completed
+    'participation_score': [8],  # Participation score out of 10
+    'alone': [False]  # Studying with peers or alone
+})
+
+display(student)
+new_student = student.copy()
+
+# Preprocess the new student data
+# Assuming 'alone' is a binary variable
+new_student['alone'] = new_student['alone'].apply(lambda x: 1 if x else 0)
+
+# Encode categorical variables if any
+# Example: If 'alone' is a categorical variable, encode it
+# onehot = enc.transform(new_student[['alone']]).toarray()
+# cols = ['alone_' + val for val in enc.categories_[0]]
+# new_student[cols] = pd.DataFrame(onehot, index=new_student.index)
+# new_student.drop(['alone'], axis=1, inplace=True)
+
+display(new_student)
+
+# Predict the probability of getting a good grade for the new student
+low_grade_proba, high_grade_proba = np.squeeze(logreg.predict_proba(new_student))
+
+# Print the probability
+print('Probability of getting a low grade: {:.2%}'.format(low_grade_proba))
+print('Probability of getting a high grade: {:.2%}'.format(high_grade_proba))
